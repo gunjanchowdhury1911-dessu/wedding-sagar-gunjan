@@ -352,22 +352,6 @@ body{background:var(--cream);color:var(--text);font-family:'Noto Serif',serif;ov
   line-height:1.8;
 }
 
-/* ── LOVE QUOTE ── */
-.quote-section{
-  background:var(--cream);
-  text-align:center;padding:70px 24px;
-}
-.quote-text{
-  font-family:'Great Vibes',cursive;
-  font-size:clamp(1.8rem,5vw,2.8rem);
-  color:var(--navy);line-height:1.5;
-  max-width:700px;margin:0 auto;
-}
-.quote-attr{
-  font-family:'Raleway',sans-serif;font-size:0.7rem;
-  letter-spacing:0.3em;text-transform:uppercase;
-  color:var(--sky);margin-top:20px;opacity:0.7;
-}
 
 /* ── FOOTER ── */
 footer{
@@ -389,6 +373,188 @@ footer{
   width:120px;height:1px;
   background:linear-gradient(to right,transparent,var(--gold),transparent);
   margin:20px auto;
+}
+
+/* ── INVITATION SECTION ── */
+.invitation-section{
+  background:linear-gradient(160deg,#0d2340 0%,#1a3a5c 60%,#1e4a7a 100%);
+  text-align:center;padding:90px 24px;
+}
+.inv-border{
+  max-width:680px;margin:0 auto;
+  border:1px solid rgba(200,169,110,0.35);
+  border-radius:4px;padding:60px 40px;
+  position:relative;
+  background:rgba(255,255,255,0.03);
+  box-shadow:0 0 60px rgba(200,169,110,0.06);
+}
+.inv-border::before,.inv-border::after{
+  content:'✦';position:absolute;
+  color:var(--gold);font-size:1.2rem;opacity:0.5;
+}
+.inv-border::before{top:16px;left:20px;}
+.inv-border::after{bottom:16px;right:20px;}
+.inv-title{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2.5rem,7vw,4rem);
+  color:var(--white);margin:10px 0 28px;
+  line-height:1.2;
+}
+.inv-body{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,2.5vw,1.2rem);
+  color:var(--pale);line-height:2;
+  margin-bottom:28px;
+}
+.inv-body strong{color:var(--gold2);}
+.inv-hearts{font-size:1.5rem;letter-spacing:8px;margin:20px 0;}
+.inv-names{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2rem,5vw,3rem);
+  color:var(--gold);margin:16px 0 8px;
+}
+.inv-date{
+  font-family:'Raleway',sans-serif;font-weight:300;
+  font-size:0.78rem;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--pale);
+  opacity:0.7;margin-bottom:24px;
+}
+.inv-rsvp{
+  font-family:'Noto Serif',serif;font-style:italic;
+  color:var(--gold2);font-size:1rem;
+  line-height:1.8;margin-top:10px;
+}
+
+
+/* ── SPLASH SCREEN ── */
+#splash{
+  position:fixed;inset:0;z-index:9999;
+  background:linear-gradient(160deg,#091520 0%,#0d2340 50%,#1a3a5c 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px 24px;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+#splash.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.splash-om{
+  font-size:3rem;color:var(--gold);
+  animation:glow 3s ease-in-out infinite;
+  margin-bottom:20px;
+}
+.splash-petals{
+  font-size:1.8rem;letter-spacing:12px;
+  margin-bottom:32px;
+  animation:floatpaw 4s ease-in-out infinite;
+}
+.splash-you{
+  font-family:'Raleway',sans-serif;font-weight:300;
+  font-size:clamp(0.7rem,2vw,0.85rem);
+  letter-spacing:0.5em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:12px;opacity:0.8;
+}
+.splash-invited{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(3.5rem,12vw,7rem);
+  color:var(--white);line-height:1.1;
+  text-shadow:0 0 40px rgba(200,169,110,0.3);
+}
+.splash-invited span{color:var(--gold);}
+.splash-sub{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--pale);font-size:clamp(1rem,3vw,1.3rem);
+  margin-top:16px;opacity:0.75;
+  max-width:500px;
+}
+.splash-btn{
+  margin-top:44px;
+  background:none;
+  border:1px solid rgba(200,169,110,0.6);
+  color:var(--gold2);
+  font-family:'Raleway',sans-serif;
+  font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;
+  padding:16px 44px;border-radius:50px;cursor:pointer;
+  transition:all 0.3s;
+  animation:pulse 2s ease-in-out infinite;
+}
+.splash-btn:hover{
+  background:rgba(200,169,110,0.15);
+  border-color:var(--gold);color:var(--gold);
+  transform:scale(1.04);
+}
+.splash-flowers{
+  position:absolute;font-size:1.2rem;opacity:0.08;
+  pointer-events:none;
+}
+
+/* ── BLOOMING FLOWER INTRO ── */
+#bloomIntro{
+  position:fixed;inset:0;z-index:10000;
+  background:radial-gradient(circle at center,#1e4a7a 0%,#0d2340 70%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+  transition:opacity 1s ease, visibility 1s ease;
+}
+#bloomIntro.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.bloom-flower{
+  position:relative;width:240px;height:240px;
+  margin-bottom:30px;
+}
+.bloom-petal{
+  position:absolute;top:50%;left:50%;
+  width:120px;height:120px;
+  margin:-60px 0 0 -60px;
+  background:linear-gradient(135deg,var(--gold2),var(--saffron));
+  border-radius:50% 0 50% 50%;
+  transform-origin:60px 60px;
+  opacity:0;
+  animation:petalBloom 1.4s ease-out forwards;
+}
+.bloom-petal:nth-child(1){--r:0deg;animation-delay:0.1s;}
+.bloom-petal:nth-child(2){--r:45deg;animation-delay:0.18s;}
+.bloom-petal:nth-child(3){--r:90deg;animation-delay:0.26s;}
+.bloom-petal:nth-child(4){--r:135deg;animation-delay:0.34s;}
+.bloom-petal:nth-child(5){--r:180deg;animation-delay:0.42s;}
+.bloom-petal:nth-child(6){--r:225deg;animation-delay:0.5s;}
+.bloom-petal:nth-child(7){--r:270deg;animation-delay:0.58s;}
+.bloom-petal:nth-child(8){--r:315deg;animation-delay:0.66s;}
+@keyframes petalBloom{
+  0%{opacity:0;transform:rotate(var(--r)) scale(0);}
+  60%{opacity:1;}
+  100%{opacity:0.92;transform:rotate(var(--r)) scale(1);}
+}
+.bloom-center{
+  position:absolute;top:50%;left:50%;
+  width:54px;height:54px;margin:-27px 0 0 -27px;
+  background:radial-gradient(circle,var(--gold) 0%,var(--saffron) 80%);
+  border-radius:50%;
+  opacity:0;
+  animation:centerPop 0.8s ease-out forwards;
+  animation-delay:1.2s;
+  box-shadow:0 0 40px rgba(232,146,42,0.6);
+  z-index:2;
+}
+@keyframes centerPop{
+  0%{opacity:0;transform:scale(0);}
+  100%{opacity:1;transform:scale(1);}
+}
+.bloom-text{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2.2rem,7vw,3.8rem);
+  color:var(--white);
+  opacity:0;padding:0 24px;
+  text-shadow:0 0 30px rgba(200,169,110,0.4);
+  animation:textRise 1.2s ease-out forwards;
+  animation-delay:1.7s;
+}
+.bloom-sub{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--gold2);font-size:clamp(1rem,2.8vw,1.3rem);
+  opacity:0;margin-top:14px;padding:0 24px;
+  animation:textRise 1.2s ease-out forwards;
+  animation-delay:2.1s;
+}
+@keyframes textRise{
+  0%{opacity:0;transform:translateY(24px);}
+  100%{opacity:1;transform:translateY(0);}
 }
 
 /* ── FADE IN ── */
@@ -415,6 +581,44 @@ footer{
 </style>
 </head>
 <body>
+
+<!-- ── BLOOMING FLOWER INTRO ── -->
+<div id="bloomIntro">
+  <div class="bloom-flower">
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-petal"></div>
+    <div class="bloom-center"></div>
+  </div>
+  <h1 class="bloom-text">You Are Warmly Invited</h1>
+  <p class="bloom-sub">to the wedding of Dr. Sagar &amp; Gunjan</p>
+</div>
+
+<!-- ── SPLASH SCREEN ── -->
+<div id="splash">
+  <span class="splash-flowers" style="top:8%;left:5%;font-size:3rem;">🌸</span>
+  <span class="splash-flowers" style="top:15%;right:7%;font-size:2.5rem;">🪷</span>
+  <span class="splash-flowers" style="bottom:12%;left:8%;font-size:2rem;">✨</span>
+  <span class="splash-flowers" style="bottom:18%;right:6%;font-size:2.5rem;">🌺</span>
+
+  <div class="splash-om">ॐ</div>
+  <p class="splash-petals">🌸 🪷 🌺</p>
+  <p class="splash-you">With love & blessings</p>
+  <h1 class="splash-invited">You Are<br><span>Invited</span></h1>
+  <p class="splash-sub">
+    Dr. Sagar &amp; Gunjan<br>
+    joyfully request the honour of your presence<br>
+    at their wedding celebration
+  </p>
+  <button class="splash-btn" onclick="openInvitation()">
+    ✦ Open Invitation ✦
+  </button>
+</div>
 
 <!-- MUSIC PLAYER -->
 <div class="music-bar" id="musicBar">
@@ -586,15 +790,29 @@ footer{
   </div>
 </section>
 
-<!-- ── LOVE QUOTE ── -->
-<section class="quote-section">
-  <div class="divider-ornate fade-in"><span>🪷</span></div>
-  <p class="quote-text fade-in">
-    "I was a fearless girl, he was the boy who changed everything —
-    <br>Romeo, save me, I've been feeling so alone..."
-  </p>
-  <p class="quote-attr fade-in">— Taylor Swift, Love Story</p>
-  <div class="divider-ornate fade-in"><span>🐾</span></div>
+
+<!-- ── INVITATION SECTION ── -->
+<section class="invitation-section">
+  <div class="inv-border">
+    <div class="divider-ornate fade-in"><span>🪷</span></div>
+    <p class="section-label fade-in" style="color:var(--gold);">With great joy & love</p>
+    <h2 class="inv-title fade-in">You Are Warmly Invited</h2>
+    <p class="inv-body fade-in">
+      Together with our beloved families, we joyfully invite<br>
+      <strong>each and every one of you</strong> — our family, our friends,<br>
+      our cherished ones near and far —<br>
+      to join us in celebrating the most beautiful chapter<br>
+      of our lives as we begin our forever together.
+    </p>
+    <div class="inv-hearts fade-in">🌸 💛 🪷 💛 🌸</div>
+    <p class="inv-names fade-in">Dr. Sagar &amp; Gunjan</p>
+    <p class="inv-date fade-in">Monday · 6th July · 2026 · Dhaka, Bangladesh</p>
+    <p class="inv-rsvp fade-in">
+      Your presence is our greatest gift.<br>
+      We cannot wait to celebrate with you. 🙏
+    </p>
+    <div class="divider-ornate fade-in"><span>🐾</span></div>
+  </div>
 </section>
 
 <!-- ── FOOTER ── -->
@@ -614,6 +832,40 @@ footer{
 </footer>
 
 <script>
+
+let playing = false;
+const audio = document.getElementById('audioPlayer');
+audio.volume = 0.7;
+let autoStarted = false;
+
+// ── Blooming Flower Intro ──
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('bloomIntro').classList.add('hide');
+  }, 3400);
+  // Try to autoplay music as soon as page loads
+  audio.play().then(() => {
+    document.getElementById('playBtn').textContent = '⏸';
+    document.getElementById('musicWave').classList.remove('paused');
+    playing = true;
+    autoStarted = true;
+  }).catch(() => {});
+});
+
+// ── Splash Screen ──
+function openInvitation() {
+  document.getElementById('splash').classList.add('hide');
+  // Start music on open
+  if (!autoStarted) {
+    autoStarted = true;
+    audio.play().then(() => {
+      document.getElementById('playBtn').textContent = '⏸';
+      document.getElementById('musicWave').classList.remove('paused');
+      playing = true;
+    }).catch(() => {});
+  }
+}
+
 // ── Countdown ──
 const wedding = new Date('2026-07-06T00:00:00');
 function tick(){
@@ -640,8 +892,26 @@ const obs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 
 // ── Music Player ──
-let playing = false;
-const audio = document.getElementById('audioPlayer');
+
+// Autoplay on first any user interaction
+function autoStart() {
+  if (!autoStarted) {
+    autoStarted = true;
+    audio.play().then(() => {
+      document.getElementById('playBtn').textContent = '⏸';
+      document.getElementById('musicWave').classList.remove('paused');
+      playing = true;
+    }).catch(() => {});
+  }
+  document.removeEventListener('click', autoStart);
+  document.removeEventListener('touchstart', autoStart);
+  document.removeEventListener('keydown', autoStart);
+  document.removeEventListener('scroll', autoStart);
+}
+document.addEventListener('click', autoStart);
+document.addEventListener('touchstart', autoStart);
+document.addEventListener('keydown', autoStart);
+document.addEventListener('scroll', autoStart);
 
 function toggleMusic() {
   const btn = document.getElementById('playBtn');
@@ -651,6 +921,7 @@ function toggleMusic() {
       btn.textContent = '⏸';
       wave.classList.remove('paused');
       playing = true;
+      autoStarted = true;
     }).catch(e => {
       console.warn('Audio error:', e);
       btn.textContent = '▶';
